@@ -7,15 +7,12 @@ function createClient({ headers }) {
   return new ApolloClient({
     uri: process.env.NODE_ENV === 'development' ? endpoint : prodEndpoint,
     request: operation => {
-      console.log({
-        cookie: headers && headers.cookie
-      });
       operation.setContext({
         fetchOptions: {
           credentials: 'include',
         },
         headers: {
-          cookie: headers && headers.cookie // NOTE: client-side headers is undefined!
+          cookie: headers && headers.cookie || document.cookie // NOTE: client-side headers is undefined!
         },
       });
     },
