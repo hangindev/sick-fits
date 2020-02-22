@@ -10,6 +10,11 @@ const CartStyles = styled.div`
   right: 0;
   width: 40%;
   min-width: 500px;
+  @media (max-width: 767px) {
+    max-width: 100%;
+    width: 500px;
+    min-width: initial;
+  }
   bottom: 0;
   transform: translateX(100%);
   transition: all 0.3s;

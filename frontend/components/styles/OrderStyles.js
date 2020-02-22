@@ -32,6 +32,9 @@ const OrderStyles = styled.div`
       width: 100%;
       object-fit: cover;
     }
-  }
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+    }
 `;
 export default OrderStyles;
