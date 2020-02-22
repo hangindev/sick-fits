@@ -14,10 +14,9 @@ function createClient({ headers }) {
         },
         headers: {
           cookie: headers && headers.cookie, // NOTE: client-side headers is undefined!
-          ...(typeof window !== 'undefined'?{
+          ...(typeof window !== 'undefined' && getToken()? {
             authorization: `Bearer ${getToken()}`
-          }:{})
-          
+          }: {})
         },
       });
     },
