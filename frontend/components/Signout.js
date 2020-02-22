@@ -14,8 +14,8 @@ const SIGN_OUT_MUTATION = gql`
 const Signout = () => (
   <Mutation mutation={SIGN_OUT_MUTATION} >
     {signout => <button onClick={() => {
-        removeToken();
         signout();
+        removeToken();
         window.location = '/';
     }}>
       Sign Out
