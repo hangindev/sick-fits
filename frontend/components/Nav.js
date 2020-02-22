@@ -12,14 +12,14 @@ const Nav = () => (
       const me = data ? data.me : null
       return (
       <NavStyles data-test="nav">
-        <Link href="/items">
+        {/* <Link href="/items">
           <a>Shop</a>
-        </Link>
+        </Link> */}
         {me && (
           <>
-            {/* <Link href="/sell">
+            <Link href="/sell">
               <a>Sell</a>
-            </Link> */}
+            </Link>
             <Link href="/orders">
               <a>Orders</a>
             </Link>
