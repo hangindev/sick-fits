@@ -40,12 +40,12 @@ const Pagination = props => (
             }}
           >
             <a className="prev" aria-disabled={page <= 1}>
-              ← Prev
+              ← <span className="mobile-hide">Prev</span>
             </a>
           </Link>
           <p>
-            Page {props.page} of
-            <span className="totalPages">{pages}</span>!
+            Page {props.page} of{" "}
+            <span className="totalPages">{pages}</span>
           </p>
           <p>{count} Items Total</p>
           <Link
@@ -56,7 +56,7 @@ const Pagination = props => (
             }}
           >
             <a className="next" aria-disabled={page >= pages}>
-              Next →
+              <span className="mobile-hide">Next</span> →
             </a>
           </Link>
         </PaginationStyles>

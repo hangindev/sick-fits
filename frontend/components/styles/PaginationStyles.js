@@ -22,6 +22,11 @@ const PaginationStyles = styled.div`
     color: grey;
     pointer-events: none;
   }
+  .mobile-hide {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
 `;
 
 export default PaginationStyles;
