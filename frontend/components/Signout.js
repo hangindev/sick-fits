@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
-import { CURRENT_USER_QUERY } from './User';
+import {removeToken} from "../lib/auth"
 
 const SIGN_OUT_MUTATION = gql`
   mutation SIGN_OUT_MUTATION {
@@ -14,7 +14,7 @@ const SIGN_OUT_MUTATION = gql`
 const Signout = () => (
   <Mutation mutation={SIGN_OUT_MUTATION} >
     {signout => <button onClick={() => {
-        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        removeToken();
         signout();
         window.location = '/';
     }}>

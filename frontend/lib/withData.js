@@ -2,18 +2,22 @@ import withApollo from 'next-with-apollo';
 import ApolloClient from 'apollo-boost';
 import { endpoint, prodEndpoint } from '../config';
 import { LOCAL_STATE_QUERY } from '../components/Cart';
+import { getToken } from "./auth";
 
 function createClient({ headers }) {
   return new ApolloClient({
     uri: process.env.NODE_ENV === 'development' ? endpoint : prodEndpoint,
     request: operation => {
       operation.setContext({
-        credentials: 'include',
         fetchOptions: {
           credentials: 'include',
         },
         headers: {
-          cookie: headers && headers.cookie || document.cookie // NOTE: client-side headers is undefined!
+          cookie: headers && headers.cookie, // NOTE: client-side headers is undefined!
+          ...(typeof window !== 'undefined'?{
+            authorization: `Bearer ${getToken()}`
+          }:{})
+          
         },
       });
     },
