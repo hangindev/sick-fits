@@ -1,6 +1,8 @@
 ![Sick Fits](/sick-fits.jpg "Sick Fits")
 
-# Sick Fits
+# [Sick Fits](https://sicccccckfits-next-prod.herokuapp.com/)
+
+(refresh demo if error as free dynos in Heroku sleep after 30-minute inactive period)
 
 A full stack online clothing store complete with real credit checkout. Users can search, sell, add to cart and checkout their favourite items.
 
